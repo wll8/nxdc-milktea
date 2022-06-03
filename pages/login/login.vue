@@ -51,7 +51,6 @@
 </template>
 
 <script>
-	import Member from '@/api/member'
 	import {mapMutations} from 'vuex'
 	
 	export default {
@@ -63,6 +62,7 @@
 		methods: {
 			...mapMutations(['SET_MEMBER']),
 			async getUserInfo(e) {
+				const Member = await this.$api(`member`)
 				const {errMsg, userInfo} = e.detail
 				if(errMsg !== "getUserInfo:ok") {
 					uni.showModal({
@@ -84,7 +84,8 @@
 					uni.navigateBack()
 				}
 			},
-			login() {
+			async login() {
+				const Member = await this.$api(`member`)
 				this.SET_MEMBER(Member)
 				uni.navigateBack()
 			}

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import api from '@/api'
-import addresses from '@/api/addresses'
 
 Vue.use(Vuex)
 
@@ -11,7 +10,7 @@ const store = new Vuex.Store({
 		cart: [],
 		orderType: 'takein',
 		address: {},
-		addresses: addresses,
+		addresses: [],
 		member: {},
 		order: {}
 	},

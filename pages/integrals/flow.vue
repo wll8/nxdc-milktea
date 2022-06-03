@@ -25,7 +25,6 @@
 
 <script>
 	import listCell from '@/components/list-cell/list-cell'
-	import pointsFlow from '@/api/points-flow'
 	
 	export default {
 		components: {
@@ -37,9 +36,10 @@
 				pointsFlow: []
 			}
 		},
-		onLoad() {
+		async onLoad() {
 			const member = this.$store.state.member
 			this.pointNum = member.pointNum
+			const pointsFlow = await this.$api(`pointsFlow`)
 			this.pointsFlow = pointsFlow
 		}
 	}

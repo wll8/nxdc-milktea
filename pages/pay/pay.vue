@@ -187,7 +187,6 @@
 	import {mapState, mapMutations} from 'vuex'
 	import listCell from '@/components/list-cell/list-cell'
 	import modal from '@/components/modal/modal'
-	import orders from '@/api/orders'
 	
 	export default {
 		components: {
@@ -241,7 +240,8 @@
 					this.pay()
 				}
 			},
-			pay() {
+			async pay() {
+				const orders = await this.$api('orders')
 				uni.showLoading({title: '加载中'})
 				//测试订单
 				let order = this.orderType == 'takein' ? orders[0] : orders[1]

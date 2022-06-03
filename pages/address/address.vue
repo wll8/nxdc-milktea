@@ -57,6 +57,7 @@
 		async onLoad({is_choose, scene}) {
 			this.is_choose = is_choose || false
 			this.scene = scene || 'menu'
+			this.get()
 		},
 		methods: {
 			...mapMutations(['SET_ADDRESS', 'SET_ADDRESSES', 'SET_ORDER_TYPE']),
@@ -64,6 +65,10 @@
 				uni.navigateTo({
 					url: '/pages/address/add'
 				})
+			},
+			async get() {
+				const addresses = await this.$api('addresses')
+				this.SET_ADDRESSES(addresses)
 			},
 			edit(id) {
 				uni.navigateTo({

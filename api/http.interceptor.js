@@ -15,7 +15,7 @@ const install = (Vue, vm) => {
   // 响应拦截，判断状态码是否通过
   Vue.prototype.$u.http.interceptor.response = (res) => {
     if (String(res.statusCode).match(/^2/)) {
-      return res.data
+      return res.data.data
     } else {
       res.config.showLoading && uni.$u.toast(res.message || `网络数据错误`)
       throw res.message

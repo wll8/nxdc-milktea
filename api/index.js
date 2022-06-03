@@ -1,55 +1,54 @@
-const install = (Vue, vm) => {
-	const table = {
-		packages (data) {
-			return vm.$u.get(`/api/packages`, data)
-		},
-		store (data) {
-			return vm.$u.get(`/api/store`, data)
-		},
-		goods (data) {
-			return vm.$u.get(`/api/goods`, data)
-		},
-		levelBenefits (data) {
-			return vm.$u.get(`/api/levelBenefits`, data)
-		},
-		member (data) {
-			returnvm.$u.get(`/api/member`, data)
-		},
-		rechargeCards (data) {
-			return vm.$u.get(`/api/rechargeCards`, data)
-		},
-		addresses (data) {
-			return vm.$u.get(`/api/addresses`, data)
-		},
-		attendance (data) {
-			return vm.$u.get(`/api/attendance`, data)
-		},
-		customPoints (data) {
-			return vm.$u.get(`/api/customPoints`, data)
-		},
-		pointsMall (data) {
-			return vm.$u.get(`/api/pointsMall`, data)
-		},
-		attendanceList (data) {
-			return vm.$u.get(`/api/attendanceList`, data)
-		},
-		todayAttendance (data) {
-			return vm.$u.get(`/api/todayAttendance`, data)
-		},
-		orders (data) {
-			return vm.$u.get(`/api/orders`, data)
-		},
-		customerCoupons (data) {
-			return vm.$u.get(`/api/customerCoupons`, data)
-		},
-		giftCards (data) {
-			return vm.$u.get(`/api/giftCards`, data)
-		},
-	}
-	Vue.prototype.$api = (apiName, ...arg) => {
-		return table[apiName](...arg)
-	}
+const api = {
+	packages (data) {
+		return uni.$u.get(`/api/packages`, data)
+	},
+	pointsFlow (data) {
+		return uni.$u.get(`/api/pointsFlow`, data)
+	},
+	store (data) {
+		return uni.$u.get(`/api/store`, data)
+	},
+	goods (data) {
+		return uni.$u.get(`/api/goods`, data)
+	},
+	levelBenefits (data) {
+		return uni.$u.get(`/api/levelBenefits`, data)
+	},
+	member (data) {
+		return uni.$u.get(`/api/member`, data)
+	},
+	rechargeCards (data) {
+		return uni.$u.get(`/api/rechargeCards`, data)
+	},
+	addresses (data) {
+		return uni.$u.get(`/api/addresses`, data)
+	},
+	attendance (data) {
+		return uni.$u.get(`/api/attendance`, data)
+	},
+	customPoints (data) {
+		return uni.$u.get(`/api/customPoints`, data)
+	},
+	pointsMall (data) {
+		return uni.$u.get(`/api/pointsMall`, data)
+	},
+	attendanceList (data) {
+		return uni.$u.get(`/api/attendanceList`, data)
+	},
+	todayAttendance (data) {
+		return uni.$u.get(`/api/todayAttendance`, data)
+	},
+	orders (data) {
+		return uni.$u.get(`/api/orders`, data)
+	},
+	customerCoupons (data) {
+		return uni.$u.get(`/api/customerCoupons`, data)
+	},
+	giftCards (data) {
+		return uni.$u.get(`/api/giftCards`, data)
+	},
 }
-export default {
-  install,
+function fn(name, ...arg) {
+	return api[name](...arg)
 }
+export default fn

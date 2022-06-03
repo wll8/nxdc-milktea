@@ -76,7 +76,6 @@
 
 <script>
 	import jyfParser from '@/components/jyf-parser/jyf-parser'
-	import pointsMall from '@/api/points-mall'
 	
 	export default {
 		components: {
@@ -100,6 +99,7 @@
 			}
 		},
 		async onLoad({cate, id}) {
+			const pointsMall = await this.$api('pointsMall')
 			this.pointGood = pointsMall[cate].find(item => item.id == id)
 			this.$nextTick(() => this.$refs['desc'].setContent(this.pointGood.exchange_desc || ''))
 			this.customPoints = await this.$api('customPoints')

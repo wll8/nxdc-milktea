@@ -1,3 +1,4 @@
+const pointsFlow = require(`./points-flow`)
 const packages = require(`./packages`)
 const store = require(`./store`)
 const goods = require(`./goods`)
@@ -23,6 +24,7 @@ module.exports = util => {
   } = util
   return {
     api: {
+      'get /api/pointsFlow': wrapApiData({data: pointsFlow}),
       'get /api/packages': wrapApiData({data: packages}),
       'get /api/store': wrapApiData({data: store}),
       'get /api/goods': wrapApiData({data: goods}),

@@ -121,7 +121,6 @@
 </template>
 
 <script>
-import Orders from '@/api/orders';
 import listCell from '@/components/list-cell/list-cell';
 
 export default {
@@ -133,7 +132,8 @@ export default {
 			order: {}
 		};
 	},
-	onLoad({ id }) {
+	async onLoad({ id }) {
+		const Orders = await this.$api(`orders`)
 		this.order = Orders.find(item => item.id == id);
 	},
 	methods: {
