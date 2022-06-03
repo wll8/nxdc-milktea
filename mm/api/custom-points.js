@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"soonExpiredPoints": 0,
 	"totalPoints": 487,
 	"expiredTime": null,

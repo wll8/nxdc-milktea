@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
 	"id": 1,
 	"accept_name": "隔壁老王",
 	"mobile": "18666600000",

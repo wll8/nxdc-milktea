@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
 		"attendance_id": 1,
 		"updated_at": "2020-04-25 02:46:36",
 		"id": 1,

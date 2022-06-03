@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"奈雪好券": [{
 			"points_price": 800,
 			"exchange_desc": "<p>兑换规则：会员可凭800积分兑换“任意软欧包免费券”1件，菜单上标有红色雪花产品除外。<p><p>售后服务：虚拟券不支持退换货服务，请先确认后兑换。<p>",

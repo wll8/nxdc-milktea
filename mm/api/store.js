@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"longitude": "114.065927",
 	"latitude": "22.537361",
 	"area_name": "福田区",

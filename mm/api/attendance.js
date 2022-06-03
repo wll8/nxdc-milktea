@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
 		"points": 1,
 		"day_name": 1,
 		"is_day": 1

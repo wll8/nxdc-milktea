@@ -1,4 +1,4 @@
-export default [
+module.exports = [
     {
         "coupon_name": "",
         "receive_at": 0,

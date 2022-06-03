@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"storeId": null,
 	"mobilePhone": "18666600000",
 	"nickname": "tinypuppet",

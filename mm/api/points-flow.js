@@ -1,4 +1,4 @@
-export default [
+module.exports = [
     {
         "happenedDate": "2020-05-11",
         "sourceType": 5,

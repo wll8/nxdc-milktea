@@ -1,4 +1,4 @@
-export default [
+module.exports = [
     {
         "updated_at": "2020-05-03 20:31:46",
         "id": 1948,

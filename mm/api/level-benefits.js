@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
 		"picture": "https://images.qmai.cn/s33123/2020/01/20/f6bdc61b9356e87d03.jpg",
 		"cardName": "V1",
 		"benefitsSummaries": [{

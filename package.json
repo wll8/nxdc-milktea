@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "mm": "npx mockm --cwd=mm"
+  },
+  "devDependencies": {
+    "mockm": "1.1.26-alpha.21"
+  }
+}

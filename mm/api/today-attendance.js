@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	"is_attendance": 2,
 	"total_points": 0,
 	"attendance_points": 1,

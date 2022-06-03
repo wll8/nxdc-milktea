@@ -1,35 +1,55 @@
-import packages from './packages'
-import store from './store'
-import goods from './goods'
-import levelBenefits from './level-benefits'
-import member from './member'
-import rechargeCards from './rechargeCards'
-import addresses from './addresses'
-import attendance from './attendance'
-import customPoints from './custom-points'
-import pointsMall from './points-mall'
-import attendanceList from './attendance-list'
-import todayAttendance from './today-attendance'
-import orders from './orders'
-import customerCoupons from './customer-coupons'
-import giftCards from './gift-cards'
-
-const json = {
-	packages,
-	store,
-	goods,
-	levelBenefits,
-	member,
-	rechargeCards,
-	addresses,
-	attendance,
-	customPoints,
-	pointsMall,
-	attendanceList,
-	todayAttendance,
-	orders,
-	customerCoupons,
-	giftCards
+const install = (Vue, vm) => {
+	const table = {
+		packages (data) {
+			return vm.$u.get(`/api/packages`, data)
+		},
+		store (data) {
+			return vm.$u.get(`/api/store`, data)
+		},
+		goods (data) {
+			return vm.$u.get(`/api/goods`, data)
+		},
+		levelBenefits (data) {
+			return vm.$u.get(`/api/levelBenefits`, data)
+		},
+		member (data) {
+			returnvm.$u.get(`/api/member`, data)
+		},
+		rechargeCards (data) {
+			return vm.$u.get(`/api/rechargeCards`, data)
+		},
+		addresses (data) {
+			return vm.$u.get(`/api/addresses`, data)
+		},
+		attendance (data) {
+			return vm.$u.get(`/api/attendance`, data)
+		},
+		customPoints (data) {
+			return vm.$u.get(`/api/customPoints`, data)
+		},
+		pointsMall (data) {
+			return vm.$u.get(`/api/pointsMall`, data)
+		},
+		attendanceList (data) {
+			return vm.$u.get(`/api/attendanceList`, data)
+		},
+		todayAttendance (data) {
+			return vm.$u.get(`/api/todayAttendance`, data)
+		},
+		orders (data) {
+			return vm.$u.get(`/api/orders`, data)
+		},
+		customerCoupons (data) {
+			return vm.$u.get(`/api/customerCoupons`, data)
+		},
+		giftCards (data) {
+			return vm.$u.get(`/api/giftCards`, data)
+		},
+	}
+	Vue.prototype.$api = (apiName, ...arg) => {
+		return table[apiName](...arg)
+	}
 }
-
-export default (name) => new Promise(resolve => resolve(json[name]), 500)
+export default {
+  install,
+}
